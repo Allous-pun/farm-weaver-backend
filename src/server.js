@@ -1,4 +1,3 @@
-// src/server.js
 require("dotenv").config();
 
 const app = require("./app");
@@ -8,10 +7,12 @@ const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
   try {
+    // Add connection options
     await connectDB();
     
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
+      console.log(`Environment: ${process.env.NODE_ENV}`);
       console.log(`API available at http://localhost:${PORT}/api`);
       console.log(`Health check: http://localhost:${PORT}/health`);
     });

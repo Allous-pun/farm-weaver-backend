@@ -235,7 +235,6 @@ const animalGeneticProfileSchema = new mongoose.Schema(
 );
 
 // Indexes for performance
-animalGeneticProfileSchema.index({ animal: 1 }, { unique: true });
 animalGeneticProfileSchema.index({ farm: 1, 'breedingProfile.isBreeder': 1 });
 animalGeneticProfileSchema.index({ farm: 1, 'traits.growthRate': 1 });
 animalGeneticProfileSchema.index({ farm: 1, 'performanceMetrics.offspringSurvivalRate': -1 });
